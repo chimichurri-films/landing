@@ -465,6 +465,17 @@
     }
 
     /* ── HABLEMOS ── */
+    @keyframes cf-fade-up {
+      from {
+        opacity: 0;
+        transform: translateY(60px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
     .cf-hablemos {
       position: relative;
       z-index: 1;
@@ -475,6 +486,15 @@
       gap: 5rem;
       align-items: start;
       border-top: 1px solid rgba(232,224,208,0.08);
+      /* estado inicial: invisible y desplazado hacia abajo */
+      opacity: 0;
+      transform: translateY(60px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .cf-hablemos.cf-visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     /* LEFT */
@@ -958,11 +978,22 @@
       if (section) {
         section.scrollIntoView({ behavior: 'smooth' });
       }
-      // Si es contacto, podría mostrar un formulario o redirigir
-      if (sectionId === 'contact') {
-        console.log('Contacto seleccionado');
-      }
     }
+
+    // ── ANIMACIÓN SCROLL HABLEMOS ──
+    const hablemosSection = document.getElementById('contact');
+    const hablemosObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            hablemosSection.classList.add('cf-visible');
+            hablemosObserver.disconnect();
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+    hablemosObserver.observe(hablemosSection);
   </script>
 </body>
 </html>
