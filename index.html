@@ -469,14 +469,12 @@
       position: relative;
       z-index: 1;
       padding: 6rem 3rem;
-      background: linear-gradient(135deg, #ff6600 0%, #ff8c42 100%);
+      background: #0a0a0a;
       display: flex;
       align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      gap: 2rem;
+      justify-content: space-between;
+      gap: 3rem;
       border-top: 1px solid rgba(232,224,208,0.08);
-      text-align: center;
     }
 
     .cf-hablemos-title {
@@ -484,17 +482,19 @@
       font-size: clamp(2rem, 5vw, 3.5rem);
       line-height: 1;
       letter-spacing: 0.02em;
-      color: #ffffff;
+      color: #e8e0d0;
       margin: 0;
+      flex: 0 0 auto;
     }
 
     .cf-hablemos-contact {
-      background: #1b5e3f;
-      padding: 1.5rem 2.5rem;
+      background: linear-gradient(135deg, #ff6600 0%, #ff8c42 100%);
+      padding: 2rem 2.5rem;
       border-radius: 0.5rem;
-      display: inline-flex;
+      display: flex;
       align-items: center;
       gap: 1rem;
+      flex: 0 0 auto;
     }
 
     .cf-hablemos-label {
@@ -528,11 +528,13 @@
 
       .cf-hablemos {
         padding: 3rem 1.5rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
       }
 
       .cf-hablemos-contact {
-        flex-direction: column;
-        gap: 0.75rem;
+        width: 100%;
       }
     }
   </style>
