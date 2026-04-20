@@ -62,16 +62,36 @@
     .cf-logo {
       display: flex;
       align-items: center;
-      gap: 1rem;
+      gap: 0.4rem;
       font-family: 'Bebas Neue', sans-serif;
       font-size: 1.6rem;
       letter-spacing: 0.05em;
-      transition: color 0.5s ease;
+      color: #000;
+      position: relative;
+      padding: 0.8rem 1.5rem;
+      z-index: 1;
+    }
+
+    .cf-logo::before {
+      content: '';
+      position: absolute;
+      inset: -0.5rem;
+      background-color: var(--logo-bg-color, #c0392b);
+      border-radius: 0.3rem;
+      z-index: -1;
+      transition: background-color 0.5s ease;
     }
 
     .cf-logo img {
       height: 50px;
       width: auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .cf-logo span {
+      position: relative;
+      z-index: 2;
     }
 
     .cf-nav-links {
@@ -583,7 +603,6 @@
     const slides = document.querySelectorAll('.cf-slide');
     const dotsContainer = document.getElementById('dots');
     const logo = document.getElementById('logo');
-    const logoText = logo.querySelector('span');
     let current = 0;
     let timer;
 
@@ -607,7 +626,7 @@
       slides[current].classList.add('active');
       dots[current].classList.add('active');
       const c = colors[current];
-      logoText.style.color = c;
+      logo.style.setProperty('--logo-bg-color', c);
       titles.forEach(t => t.style.color = c);
       cursor.style.color = c;
       clearInterval(timer);
@@ -618,7 +637,7 @@
 
     function prev() { goTo((current - 1 + slides.length) % slides.length); }
 
-    logoText.style.color = colors[0];
+    logo.style.setProperty('--logo-bg-color', colors[0]);
     titles.forEach(t => t.style.color = colors[0]);
     timer = setInterval(next, 5000);
 
