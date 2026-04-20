@@ -88,13 +88,13 @@
       left: 0;
       margin-top: 1rem;
       background: rgba(10, 10, 10, 0.98);
-      border: 1px solid rgba(192, 57, 43, 0.3);
+      border: 2px solid var(--logo-bg-color, #c0392b);
       border-radius: 0.3rem;
       min-width: 160px;
       opacity: 0;
       visibility: hidden;
       transform: translateY(-10px);
-      transition: all 0.3s ease;
+      transition: all 0.5s ease;
       z-index: 100;
     }
 
@@ -112,8 +112,9 @@
       font-size: 0.8rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      transition: all 0.3s ease;
-      border-bottom: 1px solid rgba(192, 57, 43, 0.2);
+      transition: all 0.5s ease;
+      border-bottom: 1px solid var(--logo-bg-color, #c0392b);
+      border-bottom-opacity: 0.2;
       cursor: pointer;
     }
 
