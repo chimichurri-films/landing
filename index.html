@@ -251,6 +251,102 @@
       margin-top: 0.25rem;
     }
 
+    /* ── EQUIPO ── */
+    .cf-team {
+      position: relative;
+      z-index: 1;
+      padding: 5rem 3rem 6rem;
+      border-top: 1px solid rgba(232,224,208,0.08);
+      text-align: center;
+    }
+
+    .cf-team-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      opacity: 0.5;
+      margin-bottom: 0.75rem;
+    }
+
+    .cf-team-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2rem, 3vw, 2.8rem);
+      letter-spacing: 0.02em;
+      margin-bottom: 3rem;
+    }
+
+    .cf-team-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2.5rem;
+    }
+
+    .cf-member {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .cf-member-photo {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 1px solid rgba(232,224,208,0.15);
+      background: rgba(232,224,208,0.05);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      position: relative;
+      transition: border-color 0.3s;
+    }
+
+    .cf-member-photo:hover {
+      border-color: rgba(232,224,208,0.5);
+    }
+
+    .cf-member-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .cf-member-photo .cf-member-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.3rem;
+      opacity: 0.3;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .cf-member-photo .cf-member-placeholder svg {
+      width: 28px;
+      height: 28px;
+    }
+
+    .cf-member-photo input[type="file"] {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      cursor: pointer;
+      width: 100%;
+      height: 100%;
+    }
+
+    .cf-member-name {
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      opacity: 0.6;
+    }
+
     /* ── FOOTER ── */
     .cf-footer-strip {
       position: relative;
@@ -380,12 +476,115 @@
     </div>
   </section>
 
+  <section class="cf-team">
+    <p class="cf-team-label">El equipo</p>
+    <h3 class="cf-team-title">QUIENES LO HACEN POSIBLE</h3>
+    <div class="cf-team-grid">
+
+      <div class="cf-member">
+        <div class="cf-member-photo" id="member-1">
+          <div class="cf-member-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+            <span>Foto</span>
+          </div>
+          <input type="file" accept="image/*" onchange="setPhoto(this, 'member-1')">
+        </div>
+        <span class="cf-member-name">Nombre</span>
+      </div>
+
+      <div class="cf-member">
+        <div class="cf-member-photo" id="member-2">
+          <div class="cf-member-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+            <span>Foto</span>
+          </div>
+          <input type="file" accept="image/*" onchange="setPhoto(this, 'member-2')">
+        </div>
+        <span class="cf-member-name">Nombre</span>
+      </div>
+
+      <div class="cf-member">
+        <div class="cf-member-photo" id="member-3">
+          <div class="cf-member-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+            <span>Foto</span>
+          </div>
+          <input type="file" accept="image/*" onchange="setPhoto(this, 'member-3')">
+        </div>
+        <span class="cf-member-name">Nombre</span>
+      </div>
+
+      <div class="cf-member">
+        <div class="cf-member-photo" id="member-4">
+          <div class="cf-member-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+            <span>Foto</span>
+          </div>
+          <input type="file" accept="image/*" onchange="setPhoto(this, 'member-4')">
+        </div>
+        <span class="cf-member-name">Nombre</span>
+      </div>
+
+      <div class="cf-member">
+        <div class="cf-member-photo" id="member-5">
+          <div class="cf-member-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+            <span>Foto</span>
+          </div>
+          <input type="file" accept="image/*" onchange="setPhoto(this, 'member-5')">
+        </div>
+        <span class="cf-member-name">Nombre</span>
+      </div>
+
+      <div class="cf-member">
+        <div class="cf-member-photo" id="member-6">
+          <div class="cf-member-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+            <span>Foto</span>
+          </div>
+          <input type="file" accept="image/*" onchange="setPhoto(this, 'member-6')">
+        </div>
+        <span class="cf-member-name">Nombre</span>
+      </div>
+
+      <div class="cf-member">
+        <div class="cf-member-photo" id="member-7">
+          <div class="cf-member-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+            <span>Foto</span>
+          </div>
+          <input type="file" accept="image/*" onchange="setPhoto(this, 'member-7')">
+        </div>
+        <span class="cf-member-name">Nombre</span>
+      </div>
+
+    </div>
+  </section>
+
   <div class="cf-footer-strip">
     <span>© 2025 Chimichurri Films</span>
     <span>Buenos Aires, Argentina</span>
   </div>
 
   <script>
+    // ── FOTOS DE EQUIPO ──
+    function setPhoto(input, memberId) {
+      const file = input.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const container = document.getElementById(memberId);
+        container.querySelector('.cf-member-placeholder').style.display = 'none';
+        let img = container.querySelector('img');
+        if (!img) {
+          img = document.createElement('img');
+          container.insertBefore(img, container.querySelector('input'));
+        }
+        img.src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+
     // ── CARRUSEL ──
     const slides = document.querySelectorAll('.cf-slide');
     const dotsContainer = document.getElementById('dots');
