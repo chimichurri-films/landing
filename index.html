@@ -684,6 +684,7 @@
     const slides = document.querySelectorAll('.cf-slide');
     const dotsContainer = document.getElementById('dots');
     const logo = document.getElementById('logo');
+    const nav = logo.closest('nav');
     let current = 0;
     let timer;
 
@@ -716,6 +717,7 @@
       
       const c = colors[current];
       logo.style.setProperty('--logo-bg-color', c);
+      nav.style.setProperty('--logo-bg-color', c);
       titles.forEach(t => t.style.color = c);
       cursor.style.color = c;
       clearInterval(timer);
@@ -727,6 +729,7 @@
     function prev() { goTo((current - 1 + slides.length) % slides.length); }
 
     logo.style.setProperty('--logo-bg-color', colors[0]);
+    nav.style.setProperty('--logo-bg-color', colors[0]);
     titles.forEach(t => t.style.color = colors[0]);
     timer = setInterval(next, 8000);
 
