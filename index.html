@@ -109,6 +109,15 @@
       background-position: center;
     }
 
+    .cf-slide-bg video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
     .cf-slide-overlay {
       position: absolute;
       inset: 0;
@@ -385,7 +394,7 @@
 
     <div class="cf-slide active" data-color="#c0392b">
       <div class="cf-slide-bg">
-        <video autoplay muted loop style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;">
+        <video autoplay muted loop playsinline>
           <source src="media/Presencia_clip_corto.mp4" type="video/mp4">
         </video>
       </div>
