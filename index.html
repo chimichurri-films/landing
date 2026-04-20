@@ -57,6 +57,74 @@
       align-items: center;
       justify-content: center;
       padding: 1.5rem 3rem;
+      gap: 1.5rem;
+    }
+
+    /* Menú hamburguesa */
+    .cf-hamburger {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      position: relative;
+    }
+
+    .cf-hamburger span:not(:last-child) {
+      width: 28px;
+      height: 3px;
+      background-color: var(--logo-bg-color, #c0392b);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+      display: block;
+    }
+
+    /* Dropdown menu */
+    .cf-dropdown {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      margin-top: 1rem;
+      background: rgba(10, 10, 10, 0.98);
+      border: 1px solid rgba(192, 57, 43, 0.3);
+      border-radius: 0.3rem;
+      min-width: 160px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-10px);
+      transition: all 0.3s ease;
+      z-index: 100;
+    }
+
+    .cf-hamburger:hover .cf-dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .cf-dropdown a {
+      display: block;
+      padding: 1rem 1.5rem;
+      color: rgba(232, 224, 208, 0.8);
+      text-decoration: none;
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+      border-bottom: 1px solid rgba(192, 57, 43, 0.2);
+      cursor: pointer;
+    }
+
+    .cf-dropdown a:last-child {
+      border-bottom: none;
+    }
+
+    .cf-dropdown a:hover {
+      background: rgba(192, 57, 43, 0.2);
+      color: #e8e0d0;
+      padding-left: 2rem;
     }
 
     .cf-logo {
@@ -83,10 +151,7 @@
     }
 
     .cf-logo img {
-      height: 50px;
-      width: auto;
-      position: relative;
-      z-index: 2;
+      display: none;
     }
 
     .cf-logo span {
@@ -419,8 +484,16 @@
   </div>
 
   <nav class="cf-nav">
+    <button class="cf-hamburger" id="menuBtn">
+      <span></span>
+      <span></span>
+      <span></span>
+      <div class="cf-dropdown">
+        <a href="#about" onclick="scrollToSection('about')">Quiénes somos</a>
+        <a href="#contact" onclick="scrollToSection('contact')">Contáctanos</a>
+      </div>
+    </button>
     <div class="cf-logo" id="logo">
-      <img src="./chimichurri_logo.png" alt="Chimichurri Films Logo">
       <span>CHIMICHURRI FILMS</span>
     </div>
   </nav>
@@ -493,7 +566,7 @@
     <div class="cf-dots" id="dots"></div>
   </section>
 
-  <section class="cf-about">
+  <section class="cf-about" id="about">
     <div class="cf-about-left">
       <p class="cf-about-label">Quiénes somos</p>
       <h3 class="cf-about-title">SOBRE NOSOTROS</h3>
@@ -692,6 +765,18 @@
         next();
       }
     });
+
+    // ── NAVEGACIÓN DEL MENÚ ──
+    function scrollToSection(sectionId) {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+      // Si es contacto, podría mostrar un formulario o redirigir
+      if (sectionId === 'contact') {
+        console.log('Contacto seleccionado');
+      }
+    }
   </script>
 </body>
 </html>
