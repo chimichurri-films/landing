@@ -460,20 +460,6 @@
       <p class="cf-about-text">Te invitamos a ponerle <strong>chimichurri</strong> a tu vida.</p>
       <button class="cf-btn" style="margin-top:1rem;">Contactanos →</button>
     </div>
-    <div class="cf-about-right">
-      <div class="cf-stat">
-        <div class="cf-stat-num" id="stat1">08</div>
-        <div class="cf-stat-label">Cortometrajes producidos</div>
-      </div>
-      <div class="cf-stat">
-        <div class="cf-stat-num" id="stat2">12</div>
-        <div class="cf-stat-label">Festivales seleccionados</div>
-      </div>
-      <div class="cf-stat">
-        <div class="cf-stat-num" id="stat3">03</div>
-        <div class="cf-stat-label">Premios ganados</div>
-      </div>
-    </div>
   </section>
 
   <section class="cf-team">
@@ -489,7 +475,7 @@
           </div>
           <input type="file" accept="image/*" onchange="setPhoto(this, 'member-1')">
         </div>
-        <span class="cf-member-name">Nombre</span>
+        <span class="cf-member-name">Alexandra Bravo</span>
       </div>
 
       <div class="cf-member">
@@ -500,7 +486,7 @@
           </div>
           <input type="file" accept="image/*" onchange="setPhoto(this, 'member-2')">
         </div>
-        <span class="cf-member-name">Nombre</span>
+        <span class="cf-member-name">Cala Broggia</span>
       </div>
 
       <div class="cf-member">
@@ -511,7 +497,7 @@
           </div>
           <input type="file" accept="image/*" onchange="setPhoto(this, 'member-3')">
         </div>
-        <span class="cf-member-name">Nombre</span>
+        <span class="cf-member-name">Camila Anahi Stormi</span>
       </div>
 
       <div class="cf-member">
@@ -522,7 +508,7 @@
           </div>
           <input type="file" accept="image/*" onchange="setPhoto(this, 'member-4')">
         </div>
-        <span class="cf-member-name">Nombre</span>
+        <span class="cf-member-name">Daiana Rodriguez</span>
       </div>
 
       <div class="cf-member">
@@ -533,7 +519,7 @@
           </div>
           <input type="file" accept="image/*" onchange="setPhoto(this, 'member-5')">
         </div>
-        <span class="cf-member-name">Nombre</span>
+        <span class="cf-member-name">Facundo Avero</span>
       </div>
 
       <div class="cf-member">
@@ -544,7 +530,7 @@
           </div>
           <input type="file" accept="image/*" onchange="setPhoto(this, 'member-6')">
         </div>
-        <span class="cf-member-name">Nombre</span>
+        <span class="cf-member-name">Julieta Bonina</span>
       </div>
 
       <div class="cf-member">
@@ -555,7 +541,7 @@
           </div>
           <input type="file" accept="image/*" onchange="setPhoto(this, 'member-7')">
         </div>
-        <span class="cf-member-name">Nombre</span>
+        <span class="cf-member-name">Milagros Saucedo</span>
       </div>
 
     </div>
@@ -589,7 +575,6 @@
     const slides = document.querySelectorAll('.cf-slide');
     const dotsContainer = document.getElementById('dots');
     const logo = document.getElementById('logo');
-    const stats = [document.getElementById('stat1'), document.getElementById('stat2'), document.getElementById('stat3')];
     let current = 0;
     let timer;
 
@@ -614,7 +599,6 @@
       dots[current].classList.add('active');
       const c = colors[current];
       logo.style.color = c;
-      stats.forEach(s => s.style.color = c);
       titles.forEach(t => t.style.color = c);
       cursor.style.color = c;
       clearInterval(timer);
@@ -624,7 +608,6 @@
     function next() { goTo((current + 1) % slides.length); }
 
     logo.style.color = colors[0];
-    stats.forEach(s => s.style.color = colors[0]);
     titles.forEach(t => t.style.color = colors[0]);
     timer = setInterval(next, 5000);
 
