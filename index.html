@@ -41,6 +41,11 @@
 
     #custom-cursor svg {
       display: block;
+      transition: transform 0.15s ease;
+    }
+
+    #custom-cursor.pointing-left svg {
+      transform: scaleX(-1);
     }
 
     /* ── NAV ── */
@@ -130,6 +135,7 @@
       line-height: 0.95;
       margin-bottom: 1rem;
       letter-spacing: 0.02em;
+      transition: color 0.5s ease;
     }
 
     .cf-slide-desc {
@@ -262,12 +268,11 @@
 </head>
 <body>
 
-  <!-- Cursor personalizado: flecha roja finita -->
+  <!-- Cursor personalizado: flecha horizontal direccional -->
   <div id="custom-cursor">
-    <svg width="28" height="36" viewBox="0 0 28 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M4 2 L4 30 L10 22 L16 34 L19 32.5 L13 20.5 L22 20.5 Z"
-            fill="#cc0000" stroke="#cc0000" stroke-width="0.5"
-            stroke-linejoin="round" stroke-linecap="round"/>
+    <svg width="52" height="18" viewBox="0 0 52 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <line x1="2" y1="9" x2="48" y2="9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      <polyline points="40,2 48,9 40,16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
     </svg>
   </div>
 
@@ -287,7 +292,7 @@
       <div class="cf-slide-overlay"></div>
       <div class="cf-slide-content">
         <p class="cf-slide-tag">Cortometraje · 2024</p>
-        <h2 class="cf-slide-title">LAS MANOS<br>DEL ABISMO</h2>
+        <h2 class="cf-slide-title">PRESENCIA</h2>
         <p class="cf-slide-desc">Una mujer vuelve a su pueblo natal y descubre que el pasado nunca se enterró del todo. Terror psicológico en las sierras cordobesas.</p>
         <button class="cf-btn">Ver más →</button>
       </div>
@@ -298,7 +303,7 @@
       <div class="cf-slide-overlay"></div>
       <div class="cf-slide-content">
         <p class="cf-slide-tag">Thriller · 2023</p>
-        <h2 class="cf-slide-title">EL TURNO<br>DE NOCHE</h2>
+        <h2 class="cf-slide-title">ANA NO<br>DUERME</h2>
         <p class="cf-slide-desc">Un guardia de seguridad en un depósito vacío empieza a recibir llamadas de alguien que lo conoce demasiado bien.</p>
         <button class="cf-btn">Ver más →</button>
       </div>
@@ -309,7 +314,7 @@
       <div class="cf-slide-overlay"></div>
       <div class="cf-slide-content">
         <p class="cf-slide-tag">Horror · 2023</p>
-        <h2 class="cf-slide-title">ALGO EN<br>EL ESPEJO</h2>
+        <h2 class="cf-slide-title">EL TERCER<br>PLATO</h2>
         <p class="cf-slide-desc">Cuando el reflejo empieza a moverse solo, una familia entera duda de su propia cordura. Ganador del festival Foco Oscuro 2023.</p>
         <button class="cf-btn">Ver más →</button>
       </div>
@@ -320,8 +325,30 @@
       <div class="cf-slide-overlay"></div>
       <div class="cf-slide-content">
         <p class="cf-slide-tag">Thriller · 2022</p>
-        <h2 class="cf-slide-title">BOCA<br>CERRADA</h2>
+        <h2 class="cf-slide-title">EL RITUAL</h2>
         <p class="cf-slide-desc">Tres amigos encuentran una grabación en un celular abandonado. Lo que ven no debían verlo. Thriller de tensión sin respiro.</p>
+        <button class="cf-btn">Ver más →</button>
+      </div>
+    </div>
+
+    <div class="cf-slide" data-color="#00695c">
+      <div class="cf-slide-bg" style="background-color:#020f0d; background-image: repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,120,90,0.04) 2px,rgba(0,120,90,0.04) 4px), repeating-linear-gradient(90deg,transparent,transparent 45px,rgba(0,120,90,0.02) 45px,rgba(0,120,90,0.02) 46px);"></div>
+      <div class="cf-slide-overlay"></div>
+      <div class="cf-slide-content">
+        <p class="cf-slide-tag">Terror · 2025</p>
+        <h2 class="cf-slide-title">EL RITUAL</h2>
+        <p class="cf-slide-desc">Descripción del proyecto. Reemplazá este texto con tu historia real.</p>
+        <button class="cf-btn">Ver más →</button>
+      </div>
+    </div>
+
+    <div class="cf-slide" data-color="#283593">
+      <div class="cf-slide-bg" style="background-color:#020408; background-image: repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(30,50,160,0.04) 2px,rgba(30,50,160,0.04) 4px), repeating-linear-gradient(90deg,transparent,transparent 40px,rgba(30,50,160,0.02) 40px,rgba(30,50,160,0.02) 41px);"></div>
+      <div class="cf-slide-overlay"></div>
+      <div class="cf-slide-content">
+        <p class="cf-slide-tag">Suspenso · 2025</p>
+        <h2 class="cf-slide-title">TERCER PLATO</h2>
+        <p class="cf-slide-desc">Descripción del proyecto. Reemplazá este texto con tu historia real.</p>
         <button class="cf-btn">Ver más →</button>
       </div>
     </div>
@@ -378,6 +405,8 @@
 
     const dots = document.querySelectorAll('.cf-dot');
 
+    const titles = document.querySelectorAll('.cf-slide-title');
+
     function goTo(n) {
       slides[current].classList.remove('active');
       dots[current].classList.remove('active');
@@ -387,6 +416,8 @@
       const c = colors[current];
       logo.style.color = c;
       stats.forEach(s => s.style.color = c);
+      titles.forEach(t => t.style.color = c);
+      cursor.style.color = c;
       clearInterval(timer);
       timer = setInterval(next, 5000);
     }
@@ -395,17 +426,25 @@
 
     logo.style.color = colors[0];
     stats.forEach(s => s.style.color = colors[0]);
+    titles.forEach(t => t.style.color = colors[0]);
     timer = setInterval(next, 5000);
 
     // ── CURSOR PERSONALIZADO ──
     const carousel = document.getElementById('carousel');
     const cursor = document.getElementById('custom-cursor');
+    cursor.style.color = colors[0];
 
     carousel.addEventListener('mouseenter', () => { cursor.style.display = 'block'; });
     carousel.addEventListener('mouseleave', () => { cursor.style.display = 'none'; });
     carousel.addEventListener('mousemove', (e) => {
       cursor.style.left = e.clientX + 'px';
       cursor.style.top = e.clientY + 'px';
+      const rect = carousel.getBoundingClientRect();
+      if (e.clientX - rect.left < rect.width / 2) {
+        cursor.classList.add('pointing-left');
+      } else {
+        cursor.classList.remove('pointing-left');
+      }
     });
   </script>
 </body>
