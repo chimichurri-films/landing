@@ -55,15 +55,23 @@
       z-index: 10;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
       padding: 1.5rem 3rem;
     }
 
     .cf-logo {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
       font-family: 'Bebas Neue', sans-serif;
       font-size: 1.6rem;
       letter-spacing: 0.05em;
       transition: color 0.5s ease;
+    }
+
+    .cf-logo img {
+      height: 50px;
+      width: auto;
     }
 
     .cf-nav-links {
@@ -382,12 +390,10 @@
   </div>
 
   <nav class="cf-nav">
-    <div class="cf-logo" id="logo">CHIMICHURI FILMS</div>
-    <ul class="cf-nav-links">
-      <li><a href="#">Proyectos</a></li>
-      <li><a href="#">Nosotros</a></li>
-      <li><a href="#">Contacto</a></li>
-    </ul>
+    <div class="cf-logo" id="logo">
+      <img src="../logo/Chimichurri_logo.png" alt="Chimichurri Films Logo">
+      <span>CHIMICHURI FILMS</span>
+    </div>
   </nav>
 
   <section class="cf-carousel" id="carousel">
@@ -577,6 +583,7 @@
     const slides = document.querySelectorAll('.cf-slide');
     const dotsContainer = document.getElementById('dots');
     const logo = document.getElementById('logo');
+    const logoText = logo.querySelector('span');
     let current = 0;
     let timer;
 
@@ -600,7 +607,7 @@
       slides[current].classList.add('active');
       dots[current].classList.add('active');
       const c = colors[current];
-      logo.style.color = c;
+      logoText.style.color = c;
       titles.forEach(t => t.style.color = c);
       cursor.style.color = c;
       clearInterval(timer);
@@ -611,7 +618,7 @@
 
     function prev() { goTo((current - 1 + slides.length) % slides.length); }
 
-    logo.style.color = colors[0];
+    logoText.style.color = colors[0];
     titles.forEach(t => t.style.color = colors[0]);
     timer = setInterval(next, 5000);
 
