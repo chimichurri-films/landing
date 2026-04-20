@@ -596,6 +596,8 @@
 
     function next() { goTo((current + 1) % slides.length); }
 
+    function prev() { goTo((current - 1 + slides.length) % slides.length); }
+
     logo.style.color = colors[0];
     titles.forEach(t => t.style.color = colors[0]);
     timer = setInterval(next, 5000);
@@ -615,6 +617,16 @@
         cursor.classList.add('pointing-left');
       } else {
         cursor.classList.remove('pointing-left');
+      }
+    });
+
+    // ── NAVEGACIÓN POR CLICK ──
+    carousel.addEventListener('click', (e) => {
+      const rect = carousel.getBoundingClientRect();
+      if (e.clientX - rect.left < rect.width / 2) {
+        prev();
+      } else {
+        next();
       }
     });
   </script>
