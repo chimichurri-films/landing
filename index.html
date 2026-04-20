@@ -264,8 +264,14 @@
 
     .cf-about-right {
       display: flex;
-      flex-direction: column;
-      gap: 2rem;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .cf-about-logo {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
     }
 
     .cf-stat {
@@ -491,6 +497,9 @@
       <p class="cf-about-text">Chimichurri Films es una productora dedicada a la realización audiovisual de cortometrajes independientes de ficción.<br>Radicada en Buenos Aires, Zona Norte.<br>Nuestros proyectos destacados: "Tercer Plato", "El Ritual", "Presencia", "Ana No Duerme" y "el de la pileta".</p>
       <p class="cf-about-text">Te invitamos a ponerle <strong>chimichurri</strong> a tu vida.</p>
       <button class="cf-btn" style="margin-top:1rem;">Contactanos →</button>
+    </div>
+    <div class="cf-about-right">
+      <img class="cf-about-logo" src="../logo/Chimichurri films.png" alt="Chimichurri Films Logo" />
     </div>
   </section>
 
