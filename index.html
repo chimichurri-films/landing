@@ -464,6 +464,55 @@
       letter-spacing: 0.05em;
     }
 
+    /* ── HABLEMOS ── */
+    .cf-hablemos {
+      position: relative;
+      z-index: 1;
+      padding: 6rem 3rem;
+      background: linear-gradient(135deg, #ff6600 0%, #ff8c42 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 2rem;
+      border-top: 1px solid rgba(232,224,208,0.08);
+      text-align: center;
+    }
+
+    .cf-hablemos-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      line-height: 1;
+      letter-spacing: 0.02em;
+      color: #ffffff;
+      margin: 0;
+    }
+
+    .cf-hablemos-contact {
+      background: #1b5e3f;
+      padding: 1.5rem 2.5rem;
+      border-radius: 0.5rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .cf-hablemos-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.8);
+      opacity: 0.9;
+    }
+
+    .cf-hablemos-email {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #ffffff;
+      text-decoration: none;
+      letter-spacing: 0.05em;
+    }
+
     /* ── MOBILE RESPONSIVE ── */
     @media (max-width: 768px) {
       .cf-about {
@@ -475,6 +524,15 @@
       .cf-about-right {
         order: -1;
         margin-bottom: 0.5rem;
+      }
+
+      .cf-hablemos {
+        padding: 3rem 1.5rem;
+      }
+
+      .cf-hablemos-contact {
+        flex-direction: column;
+        gap: 0.75rem;
       }
     }
   </style>
@@ -578,7 +636,6 @@
       <h3 class="cf-about-title">SOBRE NOSOTROS</h3>
       <p class="cf-about-text">Chimichurri Films es una productora dedicada a la realización audiovisual de cortometrajes independientes de ficción.<br>Radicada en Buenos Aires, Zona Norte.<br>Nuestros proyectos destacados: "Tercer Plato", "El Ritual", "Presencia", "Ana No Duerme" y "el de la pileta".</p>
       <p class="cf-about-text">Te invitamos a ponerle <strong>chimichurri</strong> a tu vida.</p>
-      <button class="cf-btn" style="margin-top:1rem;">Contactanos →</button>
     </div>
     <div class="cf-about-right">
       <img class="cf-about-logo" src="./chimichurri_logo.png" alt="Chimichurri Films Logo" />
@@ -667,6 +724,16 @@
         <span class="cf-member-name">Milagros Saucedo</span>
       </div>
 
+    </div>
+  </section>
+
+  <section class="cf-hablemos" id="contact">
+    <h2 class="cf-hablemos-title">Hablemos:</h2>
+    <div class="cf-hablemos-contact">
+      <div>
+        <p class="cf-hablemos-label">EMAIL:</p>
+        <a href="mailto:chimimichurri.producciones@gmail.com" class="cf-hablemos-email">CHIMIMICHURRI.PRODUCCIONES@GMAIL.COM</a>
+      </div>
     </div>
   </section>
 
