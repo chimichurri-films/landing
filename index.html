@@ -285,16 +285,19 @@
     }
 
     /* ── ABOUT ── */
-    .cf-about {
+    .cf-about-wrapper {
       position: relative;
       z-index: 1;
-      padding: 7rem 3rem;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
       border-top: 1px solid rgba(232,224,208,0.08);
-      max-width: 1000px;
+    }
+
+    .cf-about {
+      padding: 7rem 3rem 7rem 5rem;
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 5rem;
+      align-items: center;
+      max-width: 1100px;
       margin: 0 auto;
     }
 
@@ -620,6 +623,7 @@
         grid-template-columns: 1fr;
         padding: 3rem 1.5rem;
         gap: 1rem;
+        max-width: 100%;
       }
 
       .cf-about-right {
@@ -733,6 +737,7 @@
     <div class="cf-dots" id="dots"></div>
   </section>
 
+  <div class="cf-about-wrapper">
   <section class="cf-about" id="about">
     <div class="cf-about-left">
       <p class="cf-about-label">Quiénes somos</p>
@@ -744,6 +749,7 @@
       <img class="cf-about-logo" src="./chimichurri_logo.png" alt="Chimichurri Films Logo" />
     </div>
   </section>
+  </div>
 
   <section class="cf-team">
     <p class="cf-team-label">El equipo</p>
