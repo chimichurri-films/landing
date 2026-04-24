@@ -1057,19 +1057,6 @@
     </div>
     <div class="cf-merch-carousel-wrapper">
 
-      <!-- Flecha izquierda -->
-      <button class="cf-merch-arrow" id="merchPrev" aria-label="Anterior">
-        <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <g transform="scale(-1,1) translate(-52,0)">
-            <rect x="26" y="12" width="7" height="18" rx="3.5" fill="currentColor"/>
-            <rect x="33" y="16" width="7" height="16" rx="3.5" fill="currentColor"/>
-            <rect x="40" y="17" width="6" height="15" rx="3" fill="currentColor"/>
-            <rect x="19" y="20" width="7" height="12" rx="3.5" fill="currentColor"/>
-            <rect x="19" y="26" width="28" height="12" rx="4" fill="currentColor"/>
-          </g>
-        </svg>
-      </button>
-
       <div class="cf-merch-track-container">
         <div class="cf-merch-track" id="merchTrack">
 
@@ -1182,17 +1169,6 @@
 
         </div><!-- /track -->
       </div><!-- /container -->
-
-      <!-- Flecha derecha -->
-      <button class="cf-merch-arrow" id="merchNext" aria-label="Siguiente">
-        <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="26" y="12" width="7" height="18" rx="3.5" fill="currentColor"/>
-          <rect x="33" y="16" width="7" height="16" rx="3.5" fill="currentColor"/>
-          <rect x="40" y="17" width="6" height="15" rx="3" fill="currentColor"/>
-          <rect x="19" y="20" width="7" height="12" rx="3.5" fill="currentColor"/>
-          <rect x="19" y="26" width="28" height="12" rx="4" fill="currentColor"/>
-        </svg>
-      </button>
 
     </div><!-- /wrapper -->
   </section>
@@ -1393,8 +1369,6 @@
       const track = document.getElementById('merchTrack');
       const container = track.parentElement;
       const cards = track.querySelectorAll('.cf-merch-card');
-      const prevBtn = document.getElementById('merchPrev');
-      const nextBtn = document.getElementById('merchNext');
       let currentIndex = 0;
 
       function getVisibleCount() {
@@ -1416,9 +1390,6 @@
         currentIndex = clampIndex(i);
         track.style.transform = `translateX(-${currentIndex * getCardWidth()}px)`;
       }
-
-      prevBtn.addEventListener('click', () => slideTo(currentIndex - 1));
-      nextBtn.addEventListener('click', () => slideTo(currentIndex + 1));
 
       window.addEventListener('resize', () => slideTo(currentIndex));
 
