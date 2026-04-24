@@ -741,7 +741,7 @@
 
     .cf-merch-heart {
       position: absolute;
-      bottom: 0.85rem;
+      top: 0.85rem;
       right: 0.9rem;
       z-index: 2;
       line-height: 1;
@@ -1225,6 +1225,11 @@
   </div>
 
   <script>
+    // ── FAVORITOS MERCH ──
+    function toggleHeart(btn) {
+      btn.classList.toggle('active');
+    }
+
     // ── FOTOS DE EQUIPO ──
     function setPhoto(input, memberId) {
       const file = input.files[0];
