@@ -616,8 +616,155 @@
       border-color: rgba(232,224,208,0.8);
     }
 
+    /* ── MERCH ── */
+    .cf-merch {
+      position: relative;
+      z-index: 1;
+      padding: 5rem 0 5rem;
+      border-top: 1px solid rgba(232,224,208,0.08);
+    }
+
+    .cf-merch-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3rem, 6vw, 5rem);
+      letter-spacing: 0.06em;
+      text-align: center;
+      margin-bottom: 3rem;
+      color: #e8e0d0;
+    }
+
+    .cf-merch-carousel-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0 2rem;
+      max-width: 1500px;
+      margin: 0 auto;
+    }
+
+    .cf-merch-track-container {
+      overflow: hidden;
+      flex: 1;
+    }
+
+    .cf-merch-track {
+      display: flex;
+      gap: 1.25rem;
+      transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      will-change: transform;
+    }
+
+    .cf-merch-card {
+      min-width: calc(25% - 0.94rem);
+      background: #eeebe5;
+      border-radius: 0.4rem;
+      overflow: hidden;
+      position: relative;
+      flex-shrink: 0;
+      color: #111;
+    }
+
+    .cf-merch-badge {
+      position: absolute;
+      top: 0.75rem;
+      left: 0.75rem;
+      border: 1px solid rgba(17,17,17,0.7);
+      font-size: 0.58rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 0.22rem 0.55rem;
+      z-index: 3;
+      background: rgba(238,235,229,0.85);
+      color: #111;
+      backdrop-filter: blur(4px);
+    }
+
+    .cf-merch-media {
+      width: 100%;
+      aspect-ratio: 3/4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      background: #e0ddd7;
+    }
+
+    .cf-merch-media video,
+    .cf-merch-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .cf-merch-placeholder-img {
+      width: 55%;
+      height: 55%;
+      opacity: 0.18;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .cf-merch-heart {
+      position: absolute;
+      bottom: 0.85rem;
+      right: 0.9rem;
+      z-index: 2;
+      line-height: 1;
+    }
+
+    .cf-merch-heart svg {
+      width: 22px;
+      height: 22px;
+      fill: #c0392b;
+      filter: drop-shadow(0 0 4px rgba(192,57,43,0.6));
+    }
+
+    .cf-merch-info {
+      padding: 1rem 1rem 1.1rem;
+    }
+
+    .cf-merch-name {
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.3rem;
+      color: #111;
+      font-weight: 500;
+    }
+
+    .cf-merch-price {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.1rem;
+      letter-spacing: 0.05em;
+      color: #333;
+    }
+
+    .cf-merch-arrow {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: rgba(232,224,208,0.55);
+      padding: 0.3rem;
+      flex-shrink: 0;
+      transition: color 0.25s;
+      line-height: 0;
+    }
+
+    .cf-merch-arrow:hover { color: rgba(232,224,208,1); }
+
+    .cf-merch-arrow svg {
+      width: 44px;
+      height: 44px;
+    }
+
     /* ── MOBILE RESPONSIVE ── */
     @media (max-width: 768px) {
+      .cf-merch-card {
+        min-width: calc(80% - 0.94rem);
+      }
       .cf-about {
         grid-template-columns: 1fr;
         padding: 3rem 1.5rem;
